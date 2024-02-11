@@ -11,7 +11,9 @@ config_version=5
 [application]
 
 config/name="Brackeys-2024-1"
+run/main_scene="res://test.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
+boot_splash/bg_color=Color(0.0509804, 0.0509804, 0.0509804, 1)
 config/icon="res://icon.svg"
 
 [dotnet]
@@ -22,3 +24,4 @@ project/assembly_name="Brackeys-2024-1"
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.0941176, 0.0941176, 0.0941176, 1)
