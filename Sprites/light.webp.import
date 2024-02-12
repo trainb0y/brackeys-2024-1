@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1q0op4j8am3u"
-path="res://.godot/imported/door.png-4ad4ab0c545155655bbef277d86eb152.ctex"
+uid="uid://dbnhx56yb4rn2"
+path="res://.godot/imported/light.webp-086b91fc090e066ef5c6e1a960bb4a21.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://door.png"
-dest_files=["res://.godot/imported/door.png-4ad4ab0c545155655bbef277d86eb152.ctex"]
+source_file="res://Sprites/light.webp"
+dest_files=["res://.godot/imported/light.webp-086b91fc090e066ef5c6e1a960bb4a21.ctex"]
 
 [params]
 
