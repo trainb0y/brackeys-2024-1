@@ -8,3 +8,5 @@ func _input(event: InputEvent):
 		for body in get_overlapping_bodies():
 			if body is Player:
 				dimensions.switch_to(target)
+
+
