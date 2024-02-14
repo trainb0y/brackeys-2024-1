@@ -15,6 +15,9 @@ var current_jump_buffer: float = 0
 var current_coyote: float = 0
 var current_air_time: float = 0
 
+func _ready():
+	position = spawn_point.position
+
 func _physics_process(delta: float):
 	handle_gravity(delta)
 	handle_jump(delta)	

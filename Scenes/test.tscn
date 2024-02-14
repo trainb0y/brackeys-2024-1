@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://frtxs13m0dp3"]
+[gd_scene load_steps=16 format=3 uid="uid://frtxs13m0dp3"]
 
 [ext_resource type="PackedScene" uid="uid://0rghwpnt8qio" path="res://Scenes/player.tscn" id="1_3djog"]
+[ext_resource type="PackedScene" uid="uid://cp7o7wm6gvopy" path="res://Scenes/key.tscn" id="2_m8vqh"]
 [ext_resource type="PackedScene" uid="uid://bat7f8dsfbj1l" path="res://Scenes/door.tscn" id="2_qqbxm"]
 [ext_resource type="Script" path="res://dimensions.gd" id="3_j1icf"]
 [ext_resource type="Script" path="res://Scenes/dimension.gd" id="3_l5xs3"]
@@ -52,6 +53,9 @@ sources/1 = SubResource("TileSetAtlasSource_qhgyp")
 collision_layer = 3
 spawn_point = NodePath("../Spawn")
 
+[node name="Key" parent="." instance=ExtResource("2_m8vqh")]
+position = Vector2(-145, 99)
+
 [node name="Dimensions" type="Node" parent="." node_paths=PackedStringArray("first_dimension")]
 script = ExtResource("3_j1icf")
 first_dimension = NodePath("Blue")
@@ -91,3 +95,4 @@ position = Vector2(136, -47)
 target = NodePath("../../Blue")
 
 [node name="Spawn" type="Node2D" parent="."]
+position = Vector2(57, -39)
