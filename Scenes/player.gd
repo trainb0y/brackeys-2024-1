@@ -1,6 +1,8 @@
 class_name Player
 extends CharacterBody2D
 
+@export var spawn_point: Node2D
+@export var death_y: float = 1000
  
 const SPEED: float = 250.0
 const JUMP_VELOCITY: float = -300.0
@@ -19,6 +21,8 @@ func _physics_process(delta: float):
 	handle_movement(delta)
 	
 	move_and_slide()
+	
+	if position.y > death_y: die()
 
 func handle_movement(delta: float):	
 	var direction := Input.get_axis("player_left", "player_right")
@@ -57,3 +61,7 @@ func handle_jump(delta: float):
 		velocity.y = JUMP_VELOCITY
 		current_jump_buffer = -1;
 		current_air_time = 0 # shhhh
+
+		
+func die():
+	position = spawn_point.position

@@ -49,6 +49,11 @@ player_use={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Collision"
+2d_physics/layer_2="Death"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

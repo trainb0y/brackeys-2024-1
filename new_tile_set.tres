@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bcn2834bvca2d" path="res://Sprites/tiles.png" id="1_x7ls8"]
 [ext_resource type="Texture2D" uid="uid://bkaceg4qbuctx" path="res://Sprites/border.png" id="2_ok3dg"]
-[ext_resource type="Shader" path="res://Scenes/scroll.gdshader" id="2_ska6l"]
+[ext_resource type="Shader" path="res://Scenes/scroll-right.gdshader" id="2_ska6l"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_a7fqs"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -729,6 +729,7 @@ shader = ExtResource("2_ska6l")
 texture = ExtResource("2_ok3dg")
 use_texture_padding = false
 0:0/0 = 0
+0:0/0/modulate = Color(0.835294, 0.164706, 0.192157, 1)
 0:0/0/material = SubResource("ShaderMaterial_ysjm6")
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
