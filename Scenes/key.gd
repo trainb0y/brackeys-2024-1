@@ -16,13 +16,13 @@ func _ready():
 	modulate = unlocks.target.color
 
 
-func _physics_process(delta):
+func _physics_process(delta: float):
 	if target == null: return
 	if target.position.distance_squared_to(position) > follow_distance * follow_distance: 
 		target = null
 		return
 	
-	var dir = (target.position - position).normalized()
+	var dir := (target.position - position).normalized()
 	
 	if target.position.distance_squared_to(position) < near_distance * near_distance:
 		velocity = velocity.move_toward(Vector2.ZERO, delta * 1000)
@@ -37,7 +37,7 @@ func _on_area_2d_body_entered(body: Node2D):
 
 
 
-func _on_player_detector_area_entered(area):
+func _on_player_detector_area_entered(area: Area2D):
 	if unlocks == area and (area as Door).locked:
-		area.unlock()
+		(area as Door).unlock()
 		queue_free()

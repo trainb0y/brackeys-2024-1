@@ -10,9 +10,10 @@ var dimensions: Array[Dimension] = []
 func _ready():
 	for dim in get_children():
 		if not dim is Dimension: continue
-		dim.disable()
-		remove_child(dim)
-		dimensions.append(dim)
+		var d := dim as Dimension
+		d.disable()
+		remove_child(d)
+		dimensions.append(d)
 		
 	switch_to(first_dimension)
 

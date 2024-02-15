@@ -1,6 +1,6 @@
 extends Area2D
 
-@onready var player = get_parent()
+@onready var player: Player = get_parent()
 
-func _on_body_entered(body):
+func _on_body_entered(body: Node2D):
 	player.die()
