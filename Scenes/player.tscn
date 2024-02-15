@@ -11,6 +11,8 @@ size = Vector2(12, 12)
 radius = 5.0
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 9
+collision_mask = 9
 script = ExtResource("1_e61yx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

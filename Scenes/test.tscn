@@ -53,8 +53,10 @@ sources/1 = SubResource("TileSetAtlasSource_qhgyp")
 collision_layer = 3
 spawn_point = NodePath("../Spawn")
 
-[node name="Key" parent="." instance=ExtResource("2_m8vqh")]
+[node name="Key" parent="." node_paths=PackedStringArray("spawn_point", "unlocks") instance=ExtResource("2_m8vqh")]
 position = Vector2(-145, 99)
+spawn_point = NodePath("../KeySpawn")
+unlocks = NodePath("../Dimensions/Blue/ToRed")
 
 [node name="Dimensions" type="Node" parent="." node_paths=PackedStringArray("first_dimension")]
 script = ExtResource("3_j1icf")
@@ -96,3 +98,6 @@ target = NodePath("../../Blue")
 
 [node name="Spawn" type="Node2D" parent="."]
 position = Vector2(57, -39)
+
+[node name="KeySpawn" type="Node2D" parent="."]
+position = Vector2(-200, -30)

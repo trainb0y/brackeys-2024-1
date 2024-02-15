@@ -53,9 +53,11 @@ player_use={
 
 2d_physics/layer_1="Collision"
 2d_physics/layer_2="Death"
+2d_physics/layer_4="key"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 environment/defaults/default_clear_color=Color(0.0941176, 0.0941176, 0.0941176, 1)
