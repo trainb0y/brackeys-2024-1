@@ -1,0 +1,3 @@
+door_unlock: https://freesound.org/people/FenrirFangs/sounds/213994/
+door_open: https://freesound.org/people/skyumori/sounds/104533/
+door_locked: https://freesound.org/people/Kyle1Katarn/sounds/108407/
