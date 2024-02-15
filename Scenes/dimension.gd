@@ -7,5 +7,5 @@ func disable():
 	pass
 	
 func enable():
-	modulate = color
+	self_modulate = color
 
