@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bcn2834bvca2d" path="res://Sprites/tiles.png" id="1_x7ls8"]
 [ext_resource type="Texture2D" uid="uid://bkaceg4qbuctx" path="res://Sprites/border.png" id="2_ok3dg"]
-[ext_resource type="Shader" path="res://Scenes/scroll-right.gdshader" id="2_ska6l"]
+[ext_resource type="Shader" path="res://Shaders/scroll-right.gdshader" id="2_ska6l"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_a7fqs"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
