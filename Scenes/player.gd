@@ -65,6 +65,13 @@ func handle_jump(delta: float):
 		current_jump_buffer = -1;
 		current_air_time = 0 # shhhh
 
-		
+var dying := false
 func die():
+	if dying: return
+	dying = true
+	var t: Transition = get_parent().get_node("Transition")
+	t.into_black()
+	await get_tree().create_timer(0.4).timeout
 	position = spawn_point.position
+	t.out_of_black()
+	dying = false

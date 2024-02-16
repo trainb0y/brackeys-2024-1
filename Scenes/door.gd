@@ -3,7 +3,7 @@ extends Area2D
 
 @export var target: Dimension
 @onready var dimensions: Dimensions = get_parent().get_parent()
-@onready var player: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var player := $AudioStreamPlayer2D
 
 @onready var sound_open: AudioStream = preload("res://Sounds/door_open.wav")
 @onready var sound_unlock: AudioStream = preload("res://Sounds/door_unlock.wav")
