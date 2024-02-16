@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cp7o7wm6gvopy" path="res://Scenes/key.tscn" id="2_m8vqh"]
 [ext_resource type="PackedScene" uid="uid://bat7f8dsfbj1l" path="res://Scenes/door.tscn" id="2_qqbxm"]
 [ext_resource type="Script" path="res://dimensions.gd" id="3_j1icf"]
-[ext_resource type="Script" path="res://Scenes/dimension.gd" id="3_l5xs3"]
+[ext_resource type="Script" path="res://Scripts/dimension.gd" id="3_l5xs3"]
 [ext_resource type="TileSet" uid="uid://b3783pg7622vh" path="res://new_tile_set.tres" id="4_hioce"]
 [ext_resource type="Texture2D" uid="uid://grec4yrxjgfp" path="res://Sprites/border-block.png" id="6_5icpu"]
 [ext_resource type="Shader" path="res://Shaders/scroll-right.gdshader" id="6_18w03"]
