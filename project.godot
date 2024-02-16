@@ -54,6 +54,7 @@ player_use={
 2d_physics/layer_1="Collision"
 2d_physics/layer_2="Death"
 2d_physics/layer_4="key"
+2d_physics/layer_11="dialog trigger"
 
 [rendering]
 

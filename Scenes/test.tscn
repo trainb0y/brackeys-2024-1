@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://frtxs13m0dp3"]
+[gd_scene load_steps=18 format=3 uid="uid://frtxs13m0dp3"]
 
 [ext_resource type="PackedScene" uid="uid://0rghwpnt8qio" path="res://Scenes/player.tscn" id="1_3djog"]
 [ext_resource type="PackedScene" uid="uid://cp7o7wm6gvopy" path="res://Scenes/key.tscn" id="2_m8vqh"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bi168niw6n6wq" path="res://Sprites/border-kill.png" id="7_oagg8"]
 [ext_resource type="Shader" path="res://Shaders/scroll-left.gdshader" id="8_jlw5t"]
 [ext_resource type="PackedScene" uid="uid://c7bgla3viltv8" path="res://Scenes/transition.tscn" id="11_ia0hk"]
+[ext_resource type="PackedScene" uid="uid://dyl3ntck53xy6" path="res://Scenes/dialog.tscn" id="12_bgvqj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vkt7e"]
 shader = ExtResource("6_18w03")
@@ -109,3 +110,7 @@ position = Vector2(57, -39)
 position = Vector2(-200, -30)
 
 [node name="Transition" parent="." instance=ExtResource("11_ia0hk")]
+
+[node name="Dialog" parent="." instance=ExtResource("12_bgvqj")]
+position = Vector2(-82, -31)
+text = "[center]This is sample text lol[/center]"

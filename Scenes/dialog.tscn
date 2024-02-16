@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyl3ntck53xy6"]
+
+[ext_resource type="Script" path="res://Scripts/dialog.gd" id="1_oq4gt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y3spr"]
+radius = 41.0
+
+[node name="Dialog" type="Area2D"]
+script = ExtResource("1_oq4gt")
+text = "This is sample text"
+
+[node name="Label" type="RichTextLabel" parent="."]
+offset_left = -73.0
+offset_top = -29.0
+offset_right = 81.0
+offset_bottom = 27.0
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "this is sample text"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_y3spr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
