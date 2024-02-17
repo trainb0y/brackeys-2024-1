@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://0rghwpnt8qio"]
+[gd_scene load_steps=8 format=3 uid="uid://0rghwpnt8qio"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_16thh"]
 [ext_resource type="Texture2D" uid="uid://ncxkhbuqjp3v" path="res://Sprites/white_pixel.png" id="1_884b4"]
 [ext_resource type="Script" path="res://Scripts/death.gd" id="3_awwww"]
+[ext_resource type="AudioStream" uid="uid://7blhahdvgatt" path="res://Sounds/player_jump.wav" id="4_fdlt5"]
+[ext_resource type="AudioStream" uid="uid://c83we5pmr2k7s" path="res://Sounds/player_die.wav" id="5_p57l2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bdnto"]
 size = Vector2(12, 12)
@@ -42,5 +44,14 @@ script = ExtResource("3_awwww")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathDetector"]
 shape = SubResource("CircleShape2D_850ww")
+
+[node name="JumpPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_fdlt5")
+volume_db = -8.0
+pitch_scale = 1.5
+
+[node name="DeathPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_p57l2")
+volume_db = 4.0
 
 [connection signal="body_entered" from="DeathDetector" to="DeathDetector" method="_on_body_entered"]

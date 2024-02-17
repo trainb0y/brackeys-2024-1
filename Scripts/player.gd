@@ -15,6 +15,9 @@ var current_jump_buffer: float = 0
 var current_coyote: float = 0
 var current_air_time: float = 0
 
+@onready var audio_jump: AudioStreamPlayer2D = $JumpPlayer
+@onready var audio_die: AudioStreamPlayer2D = $DeathPlayer
+
 @onready var t: Transition = Util.get_transition()
 
 func _ready():
@@ -66,12 +69,14 @@ func handle_jump(delta: float):
 		velocity.y = JUMP_VELOCITY
 		current_jump_buffer = -1;
 		current_air_time = 0 # shhhh
+		audio_jump.play()
 
 
 var dying := false
 func die():
 	if dying: return
 	dying = true
+	audio_die.play()
 	t.into_black()
 	await get_tree().create_timer(0.4).timeout
 	position = spawn_point.position

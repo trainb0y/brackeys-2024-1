@@ -95,7 +95,7 @@ script = ExtResource("3_l5xs3")
 color = Color(0.698039, 0, 0, 1)
 
 [node name="LevelEnd" parent="Dimensions/Red" instance=ExtResource("11_c7ljq")]
-position = Vector2(518.677, 15.9686)
+position = Vector2(515, 24)
 next_level = "res://Scenes/test.tscn"
 
 [node name="ToBlueKey" parent="Dimensions/Red" node_paths=PackedStringArray("spawn_point", "unlocks") instance=ExtResource("2_m8vqh")]

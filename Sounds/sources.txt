@@ -1,3 +1,9 @@
+music: https://freesound.org/people/Andrewkn/sounds/404458/
+
 door_unlock: https://freesound.org/people/FenrirFangs/sounds/213994/
 door_open: https://freesound.org/people/skyumori/sounds/104533/
 door_locked: https://freesound.org/people/Kyle1Katarn/sounds/108407/
+player_jump: https://freesound.org/people/dave.des/sounds/127197/
+player_die: https://freesound.org/people/Jacco18/sounds/419023/
+player_win: https://freesound.org/people/unadamlar/sounds/476178/
+typing: https://freesound.org/people/stu556/sounds/450282/

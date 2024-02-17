@@ -3,6 +3,7 @@ extends Area2D
 
 @export_multiline var text: String
 @onready var label: RichTextLabel = $Label
+@onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 const speed = 0.05
 
@@ -19,8 +20,12 @@ func _process(delta):
 	if cooldown < 0:
 		label.visible_characters += 1
 		cooldown += speed
+	
+	if label.visible_ratio >= 1:
+		audio.stop()
 		
 
 func _on_body_entered(body: Node2D):
 	if body is Player:
 		typing = true
+		audio.play()

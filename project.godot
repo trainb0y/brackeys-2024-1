@@ -19,6 +19,7 @@ config/icon="res://Sprites/icon.svg"
 [autoload]
 
 Util="*res://Scripts/util.gd"
+Music="*res://Scenes/music.tscn"
 
 [dotnet]
 
