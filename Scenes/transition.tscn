@@ -6,6 +6,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d4med"]
 shader = ExtResource("2_yg4ie")
 shader_parameter/circle_size = 1.0
+shader_parameter/player_position = null
 
 [sub_resource type="Animation" id="Animation_djx25"]
 length = 0.001

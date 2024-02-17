@@ -15,8 +15,11 @@ var current_jump_buffer: float = 0
 var current_coyote: float = 0
 var current_air_time: float = 0
 
+@onready var t: Transition = get_parent().get_node("Transition")
+
 func _ready():
 	position = spawn_point.position
+	t.player = self
 
 func _physics_process(delta: float):
 	handle_gravity(delta)
@@ -69,7 +72,6 @@ var dying := false
 func die():
 	if dying: return
 	dying = true
-	var t: Transition = get_parent().get_node("Transition")
 	t.into_black()
 	await get_tree().create_timer(0.4).timeout
 	position = spawn_point.position
