@@ -1,0 +1,139 @@
+[gd_scene load_steps=4 format=3 uid="uid://g0scwf1343cd"]
+
+[ext_resource type="Script" path="res://Scripts/creditscroll.gd" id="1_oc2y4"]
+[ext_resource type="FontFile" uid="uid://de3u71wevd0ge" path="res://monocraft.ttf" id="1_xehve"]
+[ext_resource type="AudioStream" uid="uid://cy12s142plf1l" path="res://Sounds/typing.wav" id="3_grmho"]
+
+[node name="WinScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 1448.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oc2y4")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -1658.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("1_xehve")
+theme_override_fonts/bold_font = ExtResource("1_xehve")
+theme_override_fonts/italics_font = ExtResource("1_xehve")
+theme_override_fonts/bold_italics_font = ExtResource("1_xehve")
+theme_override_fonts/mono_font = ExtResource("1_xehve")
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "
+
+
+
+
+
+
+
+
+
+
+
+
+
+[center]
+[font_size=72]You Win![/font_size]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[font_size=54]Programming[/font_size]
+
+trainb0y
+
+[font_size=54]Art[/font_size]
+[color=slate_gray](if you can call it that)[/color]
+
+trainb0y
+
+[font_size=54]Levels[/font_size]
+
+trainb0y
+
+[font_size=54]Audio[/font_size]
+[color=slate_gray](via freesound.org, all under CC0)[/color]
+
+[font_size=36]Music[/font_size] 
+
+Andrewkn
+
+[font_size=36]SFX[/font_size] 
+
+stu556
+unadamlar
+Jacco18
+dave.des
+Kyle1Katarn
+skyumori
+FenrirFangs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[font_size=72]Thanks for Playing![/font_size]
+
+https://github.com/trainb0y/brackeys-2024-1
+
+
+
+:D
+[/center]"
+scroll_active = false
+scroll_following = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_grmho")
+volume_db = 1.0
+
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
