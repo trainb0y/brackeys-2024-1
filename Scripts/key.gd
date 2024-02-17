@@ -9,6 +9,8 @@ const near_distance: float = 20
 const speed: float = 150
 
 var target: Player = null
+var offset: Vector2 = Vector2.ZERO
+var dir = 1
 
 func _ready():
 	position = spawn_point.position
@@ -17,7 +19,14 @@ func _ready():
 
 
 func _physics_process(delta: float):
-	if target == null: return
+	if target == null: 
+		# budget tweening
+		position -= offset
+		offset = offset + Vector2(0, delta * dir * 10)
+		if abs(offset.y) > 5:
+			dir = -dir
+		position += offset
+		return
 	if target.position.distance_squared_to(position) > follow_distance * follow_distance: 
 		target = null
 		return

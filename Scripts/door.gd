@@ -9,6 +9,8 @@ extends Area2D
 @onready var sound_unlock: AudioStream = preload("res://Sounds/door_unlock.wav")
 @onready var sound_fail: AudioStream = preload("res://Sounds/door_locked.wav")
 
+@onready var transition: Transition = Util.get_transition()
+
 var locked = true
 
 func _ready():
@@ -25,7 +27,10 @@ func try_use():
 		player.stop()
 		player.stream = sound_open
 		player.play()
+		transition.into_black()
+		await get_tree().create_timer(0.4).timeout
 		dimensions.switch_to(target)
+		transition.out_of_black()
 	else:
 		player.stop()
 		player.stream = sound_fail 

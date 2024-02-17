@@ -1,6 +1,7 @@
 extends Area2D
 
 @export_file(".tscn") var next_level: String
+@export_file(".tscn") var current_level: String
 @onready var t: Transition = Util.get_transition()
 
 func _ready():

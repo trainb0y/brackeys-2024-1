@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cp7o7wm6gvopy"]
 
-[ext_resource type="Texture2D" uid="uid://ncxkhbuqjp3v" path="res://Sprites/white_pixel.png" id="1_3khfa"]
 [ext_resource type="Script" path="res://Scripts/key.gd" id="1_ydys3"]
+[ext_resource type="Texture2D" uid="uid://c5rfe0vam0g4p" path="res://Sprites/key.png" id="2_or6n1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jyb1n"]
 radius = 5.0
@@ -18,10 +18,8 @@ script = ExtResource("1_ydys3")
 shape = SubResource("CircleShape2D_jyb1n")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 0, 1)
 position = Vector2(2.38419e-07, 2.38419e-07)
-scale = Vector2(10, 10)
-texture = ExtResource("1_3khfa")
+texture = ExtResource("2_or6n1")
 
 [node name="PlayerDetector" type="Area2D" parent="."]
 collision_layer = 8
