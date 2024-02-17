@@ -15,11 +15,10 @@ var current_jump_buffer: float = 0
 var current_coyote: float = 0
 var current_air_time: float = 0
 
-@onready var t: Transition = get_parent().get_node("Transition")
+@onready var t: Transition = Util.get_transition()
 
 func _ready():
 	position = spawn_point.position
-	t.player = self
 
 func _physics_process(delta: float):
 	handle_gravity(delta)
@@ -67,6 +66,7 @@ func handle_jump(delta: float):
 		velocity.y = JUMP_VELOCITY
 		current_jump_buffer = -1;
 		current_air_time = 0 # shhhh
+
 
 var dying := false
 func die():

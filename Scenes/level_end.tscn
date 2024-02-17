@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3csacx10wb8k"]
+
+[ext_resource type="Script" path="res://Scripts/levelend.gd" id="1_icgjf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ovw6j"]
+radius = 14.0357
+
+[node name="LevelEnd" type="Area2D"]
+script = ExtResource("1_icgjf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ovw6j")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
