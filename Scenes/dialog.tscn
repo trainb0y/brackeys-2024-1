@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dyl3ntck53xy6"]
+[gd_scene load_steps=5 format=3 uid="uid://dyl3ntck53xy6"]
 
 [ext_resource type="Script" path="res://Scripts/dialog.gd" id="1_oq4gt"]
 [ext_resource type="AudioStream" uid="uid://cy12s142plf1l" path="res://Sounds/typing.wav" id="2_l5yym"]
+[ext_resource type="FontFile" uid="uid://de3u71wevd0ge" path="res://monocraft.ttf" id="2_ql5uo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y3spr"]
 radius = 41.0
@@ -11,11 +12,25 @@ script = ExtResource("1_oq4gt")
 text = "This is sample text"
 
 [node name="Label" type="RichTextLabel" parent="."]
-offset_left = -73.0
-offset_top = -29.0
-offset_right = 81.0
-offset_bottom = 27.0
-theme_override_font_sizes/normal_font_size = 12
+clip_contents = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.0
+offset_top = -47.0
+offset_right = 226.0
+offset_bottom = 99.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/normal_font = ExtResource("2_ql5uo")
+theme_override_fonts/bold_font = ExtResource("2_ql5uo")
+theme_override_fonts/italics_font = ExtResource("2_ql5uo")
+theme_override_fonts/bold_italics_font = ExtResource("2_ql5uo")
+theme_override_fonts/mono_font = ExtResource("2_ql5uo")
+theme_override_font_sizes/normal_font_size = 18
 bbcode_enabled = true
 text = "this is sample text"
 fit_content = true
