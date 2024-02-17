@@ -3,7 +3,9 @@ extends Control
 @onready var label: RichTextLabel = $RichTextLabel
 @onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
-const speed = 0.05
+const speed = 0.06
+
+var typing = false
 var cooldown: float = 0 
 
 func _ready():

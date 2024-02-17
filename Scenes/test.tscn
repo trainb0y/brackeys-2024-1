@@ -70,14 +70,11 @@ layer_0/tile_data = PackedInt32Array(65531, 0, 65537, 131067, 0, 1, 131066, 0, 1
 script = ExtResource("3_l5xs3")
 color = Color(0.168627, 0.356863, 0.658824, 1)
 
-[node name="ToRedKey" parent="Dimensions/Blue" node_paths=PackedStringArray("spawn_point", "unlocks") instance=ExtResource("2_m8vqh")]
+[node name="ToRedKey" parent="Dimensions/Blue" node_paths=PackedStringArray("unlocks") instance=ExtResource("2_m8vqh")]
 position = Vector2(-145, 99)
-spawn_point = NodePath("../../../KeySpawn")
 unlocks = NodePath("../ToRed")
 
 [node name="ToRed" parent="Dimensions/Blue" node_paths=PackedStringArray("target") instance=ExtResource("2_qqbxm")]
-self_modulate = Color(0.698039, 0, 0, 1)
-position = Vector2(301, 18)
 target = NodePath("../../Red")
 
 [node name="TileMap" type="TileMap" parent="Dimensions/Blue"]
@@ -94,19 +91,20 @@ layer_0/tile_data = PackedInt32Array(65531, 0, 65537, 131067, 0, 1, 131066, 0, 1
 script = ExtResource("3_l5xs3")
 color = Color(0.698039, 0, 0, 1)
 
-[node name="LevelEnd" parent="Dimensions/Red" instance=ExtResource("11_c7ljq")]
+[node name="Flag" parent="Dimensions/Red" instance=ExtResource("11_c7ljq")]
 position = Vector2(515, 24)
-next_level = "res://Scenes/test.tscn"
+next_level = "res://Scenes/win.tscn"
+current_level = "res://Scenes/test.tscn"
 
-[node name="ToBlueKey" parent="Dimensions/Red" node_paths=PackedStringArray("spawn_point", "unlocks") instance=ExtResource("2_m8vqh")]
+[node name="ToBlueKey" parent="Dimensions/Red" node_paths=PackedStringArray("unlocks") instance=ExtResource("2_m8vqh")]
 position = Vector2(-145, 99)
-spawn_point = NodePath("../../../KeySpawn")
 unlocks = NodePath("../ToBlue")
 
 [node name="ToBlue" parent="Dimensions/Red" node_paths=PackedStringArray("target") instance=ExtResource("2_qqbxm")]
 self_modulate = Color(0.168627, 0.356863, 0.658824, 1)
 position = Vector2(136, -47)
 target = NodePath("../../Blue")
+locked = true
 
 [node name="Spawn" type="Node2D" parent="."]
 position = Vector2(57, -39)

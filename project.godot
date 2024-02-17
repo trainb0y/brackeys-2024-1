@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Brackeys-2024-1"
-run/main_scene="res://Scenes/win.tscn"
+run/main_scene="res://Scenes/test.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 boot_splash/bg_color=Color(0.0509804, 0.0509804, 0.0509804, 1)
 config/icon="res://Sprites/icon.svg"

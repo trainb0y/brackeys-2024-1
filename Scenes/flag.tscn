@@ -1,12 +1,55 @@
-[gd_scene load_steps=6 format=3 uid="uid://c3csacx10wb8k"]
+[gd_scene load_steps=12 format=3 uid="uid://c3csacx10wb8k"]
 
 [ext_resource type="Script" path="res://Scripts/flag.gd" id="1_0j0qk"]
 [ext_resource type="AudioStream" uid="uid://c7cuip1h0lm2w" path="res://Sounds/player_win.wav" id="2_wgu8u"]
-[ext_resource type="Texture2D" uid="uid://b2vkg4ogn0a5c" path="res://Sprites/flag.png" id="3_nvswb"]
+[ext_resource type="Texture2D" uid="uid://cqoyc56fv0880" path="res://Sprites/flag-sheet.png" id="3_1ng2a"]
 [ext_resource type="Texture2D" uid="uid://dbnhx56yb4rn2" path="res://Sprites/light.webp" id="4_qorii"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ovw6j"]
 radius = 14.0357
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7syc"]
+atlas = ExtResource("3_1ng2a")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ed603"]
+atlas = ExtResource("3_1ng2a")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_af347"]
+atlas = ExtResource("3_1ng2a")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gj7uc"]
+atlas = ExtResource("3_1ng2a")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ii1pw"]
+atlas = ExtResource("3_1ng2a")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nmrwl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7syc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ed603")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_af347")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gj7uc")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_ii1pw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
 
 [node name="Flag" type="Area2D"]
 script = ExtResource("1_0j0qk")
@@ -19,8 +62,10 @@ stream = ExtResource("2_wgu8u")
 volume_db = -10.0
 pitch_scale = 1.5
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("3_nvswb")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_nmrwl")
+autoplay = "default"
+frame_progress = 0.168314
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 energy = 2.0

@@ -1,7 +1,6 @@
 class_name Key
 extends CharacterBody2D
 
-@export var spawn_point: Node2D
 @export var unlocks: Door
 
 const follow_distance: float = 150
@@ -10,21 +9,21 @@ const speed: float = 150
 
 var target: Player = null
 var offset: Vector2 = Vector2.ZERO
-var dir = 1
+var t_dir = 1
+
+var spawn_point: Vector2
 
 func _ready():
-	position = spawn_point.position
-	print(unlocks.target.color)
+	spawn_point = position
 	modulate = unlocks.target.color
-
 
 func _physics_process(delta: float):
 	if target == null: 
 		# budget tweening
 		position -= offset
-		offset = offset + Vector2(0, delta * dir * 10)
+		offset = offset + Vector2(0, delta * t_dir * 10)
 		if abs(offset.y) > 5:
-			dir = -dir
+			t_dir = -t_dir
 		position += offset
 		return
 	if target.position.distance_squared_to(position) > follow_distance * follow_distance: 
