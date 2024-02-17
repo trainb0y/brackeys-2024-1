@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c3csacx10wb8k"]
+[gd_scene load_steps=5 format=3 uid="uid://c3csacx10wb8k"]
 
 [ext_resource type="Script" path="res://Scripts/levelend.gd" id="1_icgjf"]
+[ext_resource type="AudioStream" uid="uid://c7cuip1h0lm2w" path="res://Sounds/player_win.wav" id="2_jh3bg"]
+[ext_resource type="Texture2D" uid="uid://b2vkg4ogn0a5c" path="res://Sprites/flag.png" id="3_8kyyr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ovw6j"]
 radius = 14.0357
@@ -10,5 +12,13 @@ script = ExtResource("1_icgjf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ovw6j")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_jh3bg")
+volume_db = -10.0
+pitch_scale = 1.5
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_8kyyr")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
