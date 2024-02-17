@@ -1,0 +1,46 @@
+[gd_scene load_steps=10 format=3 uid="uid://rkpaqolrtkgw"]
+
+[ext_resource type="Shader" path="res://Shaders/scroll-right.gdshader" id="1_ld503"]
+[ext_resource type="Texture2D" uid="uid://grec4yrxjgfp" path="res://Sprites/border-block.png" id="2_2t7x1"]
+[ext_resource type="Shader" path="res://Shaders/scroll-left.gdshader" id="3_m61c0"]
+[ext_resource type="Texture2D" uid="uid://bi168niw6n6wq" path="res://Sprites/border-kill.png" id="4_xkuh5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vkt7e"]
+shader = ExtResource("1_ld503")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t3yaa"]
+texture = ExtResource("2_2t7x1")
+use_texture_padding = false
+0:0/0 = 0
+0:0/0/material = SubResource("ShaderMaterial_vkt7e")
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_1/angular_velocity = 0.0
+0:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3eh45"]
+shader = ExtResource("3_m61c0")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qhgyp"]
+texture = ExtResource("4_xkuh5")
+use_texture_padding = false
+0:0/0 = 0
+0:0/0/material = SubResource("ShaderMaterial_3eh45")
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_1/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_pwihn"]
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 2
+physics_layer_1/collision_layer = 4
+physics_layer_1/collision_mask = 4
+sources/0 = SubResource("TileSetAtlasSource_t3yaa")
+sources/1 = SubResource("TileSetAtlasSource_qhgyp")
+
+[node name="Danger" type="TileMap"]
+tile_set = SubResource("TileSet_pwihn")
+format = 2

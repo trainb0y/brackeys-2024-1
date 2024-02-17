@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dt414hd8xvikb"]
+
+[ext_resource type="TileSet" uid="uid://b3783pg7622vh" path="res://tileset.tres" id="1_gxhqj"]
+[ext_resource type="Script" path="res://Scripts/dimension.gd" id="2_q4ssp"]
+
+[node name="Dimension" type="TileMap"]
+texture_filter = 1
+texture_repeat = 2
+tile_set = ExtResource("1_gxhqj")
+format = 2
+layer_0/name = "main"
+script = ExtResource("2_q4ssp")
+color = Color(0.168627, 0.356863, 0.658824, 1)
