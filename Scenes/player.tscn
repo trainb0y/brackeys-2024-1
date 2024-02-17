@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://0rghwpnt8qio"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_16thh"]
-[ext_resource type="Texture2D" uid="uid://ncxkhbuqjp3v" path="res://Sprites/white_pixel.png" id="1_884b4"]
+[ext_resource type="Texture2D" uid="uid://ncxkhbuqjp3v" path="res://Sprites/white-pixel.png" id="1_884b4"]
 [ext_resource type="Script" path="res://Scripts/death.gd" id="3_awwww"]
 [ext_resource type="AudioStream" uid="uid://7blhahdvgatt" path="res://Sounds/player_jump.wav" id="4_fdlt5"]
 [ext_resource type="AudioStream" uid="uid://c83we5pmr2k7s" path="res://Sounds/player_die.wav" id="5_p57l2"]

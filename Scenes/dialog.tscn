@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/dialog.gd" id="1_oq4gt"]
 [ext_resource type="AudioStream" uid="uid://cy12s142plf1l" path="res://Sounds/typing.wav" id="2_l5yym"]
-[ext_resource type="FontFile" uid="uid://de3u71wevd0ge" path="res://monocraft.ttf" id="2_ql5uo"]
+[ext_resource type="FontFile" uid="uid://de3u71wevd0ge" path="res://Fonts/monocraft.ttf" id="2_ql5uo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y3spr"]
 radius = 41.0

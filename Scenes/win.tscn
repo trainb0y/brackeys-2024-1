@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://g0scwf1343cd"]
 
 [ext_resource type="Script" path="res://Scripts/creditscroll.gd" id="1_oc2y4"]
-[ext_resource type="FontFile" uid="uid://de3u71wevd0ge" path="res://monocraft.ttf" id="1_xehve"]
+[ext_resource type="FontFile" uid="uid://de3u71wevd0ge" path="res://Fonts/monocraft.ttf" id="1_xehve"]
 [ext_resource type="AudioStream" uid="uid://cy12s142plf1l" path="res://Sounds/typing.wav" id="3_grmho"]
 
 [node name="WinScreen" type="Control"]
