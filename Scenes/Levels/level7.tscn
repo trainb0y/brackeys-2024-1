@@ -28,6 +28,7 @@ unlocks = NodePath("../Door")
 
 [node name="Flag" parent="Dimensions/Dimension" instance=ExtResource("5_2kbv7")]
 position = Vector2(11, -88)
+next_level = "res://Scenes/Levels/level8.tscn"
 
 [node name="Door" parent="Dimensions/Dimension" node_paths=PackedStringArray("target") instance=ExtResource("7_m3qjp")]
 position = Vector2(82, -96)
