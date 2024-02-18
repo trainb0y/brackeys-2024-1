@@ -31,7 +31,7 @@ I wouldn't touch it, if I were you.
 
 [node name="Flag" parent="Dimensions/Dimension" instance=ExtResource("5_5vybx")]
 position = Vector2(209, 8)
-next_level = "res://Scenes/level5.tscn"
+next_level = "res://Scenes/Levels/level5.tscn"
 
 [node name="Door2" parent="Dimensions/Dimension" node_paths=PackedStringArray("target") instance=ExtResource("7_xy007")]
 position = Vector2(205, 64)

@@ -1,12 +1,13 @@
 extends Node
  
-# yes
-# yes
-# yes
 # I know these are bad
 # shut up
 # go away
+# it's the last day of the jam
+# I'm too lazy to try to make something better
 
+# could also cache these and only recalc on scene change
+# that's effort though
 
 func get_player() -> Player:
 	var p = []

@@ -5,6 +5,10 @@ extends CanvasLayer
 @onready var anim := $AnimationPlayer
 @onready var player: Player = Util.get_player()
 
+# honestly this thing could probably be an autoload
+# but... I'm lazy, and this is the last jam day
+# so this works:tm:
+
 func _ready():
 	rect.visible = true
 	out_of_black()
@@ -23,6 +27,7 @@ func _process(delta):
 	
 
 func into_black():
+	# :sparkles: useless :sparkles:
 	anim.queue("out")
 
 func out_of_black():

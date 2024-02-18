@@ -29,6 +29,7 @@ unlocks = NodePath("../Door")
 
 [node name="Flag" parent="Dimensions/Dimension" instance=ExtResource("5_wgaq7")]
 position = Vector2(83, -88)
+next_level = "res://Scenes/Levels/level6.tscn"
 
 [node name="Dialog" parent="Dimensions/Dimension" instance=ExtResource("6_e4xl3")]
 text = "[center]I'm sure you can figure [color=yellow]this one[/color] out without me.[/center]"
@@ -52,6 +53,7 @@ target = NodePath("../../Dimension2")
 [node name="Dimension2" parent="Dimensions" instance=ExtResource("4_484j8")]
 layer_0/tile_data = PackedInt32Array(-262146, 196608, 65536, -262145, 131072, 1, -327680, 131072, 1, -327679, 131072, 1, -327678, 131072, 1, -327677, 131072, 1, -327676, 131072, 1, -327675, 131072, 1, -327674, 131072, 1, -327673, 131072, 1, -327672, 131072, 1, -327671, 131072, 1, -327670, 196608, 196608)
 color = Color(0, 0.760784, 0.231373, 1)
+spawn_point = Vector2(0, -100)
 
 [node name="Door3" parent="Dimensions/Dimension2" node_paths=PackedStringArray("target") instance=ExtResource("9_pqwee")]
 position = Vector2(0, -96)
