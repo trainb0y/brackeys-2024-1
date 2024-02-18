@@ -13,28 +13,28 @@ var t_dir = 1
 
 @onready var spawn_point: Vector2 = position
 
+var time = 0
+
 func _ready():
 	modulate = unlocks.target.color
 
 func _physics_process(delta: float):
 	if target == null: 
 		# budget tweening
-		position -= offset
-		offset = offset + Vector2(0, delta * t_dir * 10)
-		if abs(offset.y) > 5:
+		time += delta
+		if time > 0.4:
 			t_dir = -t_dir
-		position += offset
-		return
-	if target.position.distance_squared_to(position) > follow_distance * follow_distance: 
-		target = null
-		return
-	
-	var dir := (target.position - position).normalized()
-	
-	if target.position.distance_squared_to(position) < near_distance * near_distance:
-		velocity = velocity.move_toward(Vector2.ZERO, delta * 1000)
+			time = 0
+		velocity = Vector2(0, delta * t_dir * 500)
 	else:
-		velocity = dir * speed
+		if target.position.distance_squared_to(position) > follow_distance * follow_distance: 
+			target = null
+			return
+		var dir := (target.position - position).normalized()
+		if target.position.distance_squared_to(position) < near_distance * near_distance:
+			velocity = velocity.move_toward(Vector2.ZERO, delta * 1000)
+		else:
+			velocity = dir * speed
 	
 	move_and_slide()
 
