@@ -7,6 +7,7 @@ extends CanvasLayer
 
 func _ready():
 	rect.visible = true
+	out_of_black()
 	
 func _process(delta):
 	if player == null: return

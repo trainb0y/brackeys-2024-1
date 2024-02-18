@@ -87,3 +87,11 @@ func die():
 	position = spawn_point
 	t.out_of_black()
 	dying = false
+	
+
+func _input(event: InputEvent):
+	if Input.is_action_just_pressed("reset"):
+		t.into_black()
+		await get_tree().create_timer(0.4).timeout
+		get_tree().reload_current_scene()
+

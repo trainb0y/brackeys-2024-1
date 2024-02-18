@@ -50,22 +50,3 @@ I think so at least.[/center]"
 
 [node name="Flag" parent="Dimensions/Dimension2" instance=ExtResource("5_qqqp5")]
 position = Vector2(288, -56)
-
-[node name="Dimension3" parent="Dimensions" instance=ExtResource("4_vgw1c")]
-position = Vector2(5, 4)
-layer_0/tile_data = PackedInt32Array(65542, 196608, 65536, 65543, 131072, 1, 65544, 131072, 1, 65545, 131072, 1, 65546, 131072, 1, 65548, 131072, 1, 65547, 131072, 1, 65549, 131072, 1, 65550, 131072, 1, 65551, 65536, 131073, 65552, 65536, 65536, 65553, 65536, 65536, 17, 0, 2, -65519, 0, 2, -131055, 0, 2, -196591, 65536, 0, -196592, 131072, 196608, -131056, 65536, 131072, -65520, 65536, 131072, 16, 0, 196609, -196590, 131072, 0, -131054, 65536, 196608, -65518, 65536, 196608, 18, 65536, 196608, 65554, 131072, 65536, 15, 131072, 196608)
-color = Color(0.682353, 0.0509804, 0.215686, 1)
-spawn_point = Vector2(110, 0)
-
-[node name="Door" parent="Dimensions/Dimension3" node_paths=PackedStringArray("target") instance=ExtResource("5_myfe0")]
-position = Vector2(104, 0)
-target = NodePath("../../Dimension")
-
-[node name="Dialog" parent="Dimensions/Dimension3" instance=ExtResource("6_j0msf")]
-position = Vector2(178, 0)
-text = "[center]Cool, right?
-
-I think so at least.[/center]"
-
-[node name="Flag" parent="Dimensions/Dimension3" instance=ExtResource("5_qqqp5")]
-position = Vector2(288, -56)

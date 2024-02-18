@@ -5,12 +5,6 @@ extends Area2D
 @onready var t: Transition = Util.get_transition()
 @onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
-func _ready():
-	owner.connect("ready", _post_ready)
-	
-func _post_ready():
-	t.out_of_black()
-
 func _on_body_entered(body):
 	if body is Player:
 		t.into_black()
