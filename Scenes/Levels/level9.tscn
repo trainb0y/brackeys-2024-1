@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://cdxo2wp6pt7pw"]
+
+[ext_resource type="PackedScene" uid="uid://c7bgla3viltv8" path="res://Scenes/transition.tscn" id="1_gktjg"]
+[ext_resource type="PackedScene" uid="uid://0rghwpnt8qio" path="res://Scenes/player.tscn" id="2_owlxv"]
+[ext_resource type="Script" path="res://Scripts/dimensions.gd" id="3_r7gp0"]
+[ext_resource type="PackedScene" uid="uid://dt414hd8xvikb" path="res://Scenes/dimension.tscn" id="4_ekw21"]
+[ext_resource type="PackedScene" uid="uid://c3csacx10wb8k" path="res://Scenes/flag.tscn" id="5_palwt"]
+[ext_resource type="PackedScene" uid="uid://dyl3ntck53xy6" path="res://Scenes/dialog.tscn" id="6_nrevt"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Transition" parent="." instance=ExtResource("1_gktjg")]
+
+[node name="Player" parent="." instance=ExtResource("2_owlxv")]
+position = Vector2(12, -1)
+
+[node name="Dimensions" type="Node" parent="." node_paths=PackedStringArray("first_dimension")]
+script = ExtResource("3_r7gp0")
+first_dimension = NodePath("Dimension")
+
+[node name="Dimension" parent="Dimensions" instance=ExtResource("4_ekw21")]
+layer_0/tile_data = PackedInt32Array(131071, 131072, 196608, 65536, 65536, 0, 65537, 65536, 0, 65538, 65536, 0, 65539, 65536, 0, 65540, 65536, 0, 65541, 65536, 0, 65542, 65536, 0, 65543, 65536, 0, 65544, 65536, 0, 65545, 65536, 0, 65546, 65536, 0, 65547, 65536, 0, 196607, 131072, 131072, 131072, 65536, 65536, 131073, 65536, 65536, 131074, 65536, 65536, 131075, 65536, 65536, 131076, 65536, 65536, 131077, 65536, 65536, 131078, 65536, 65536, 131079, 65536, 65536, 131080, 65536, 65536, 131081, 65536, 65536, 131082, 65536, 65536, 131083, 65536, 65536, 131084, 65536, 65536, 65548, 65536, 0, 65549, 65536, 0, 65550, 65536, 0, 65551, 65536, 0, 65552, 65536, 0, 65553, 65536, 0, 65554, 65536, 0, 65555, 65536, 0, 131090, 65536, 65536, 131089, 65536, 65536, 131088, 65536, 65536, 131087, 65536, 65536, 131086, 65536, 65536, 131085, 65536, 65536, 131091, 65536, 65536, 131092, 65536, 65536, 65556, 65536, 0, 65535, 1, 0, -1, 1, 0, -65537, 1, 0, -131073, 1, 0, -196609, 1, 0, -262145, 1, 0, -327680, 1, 0, -327679, 1, 0, -327678, 1, 0, -327677, 1, 0, -327676, 1, 0, -327675, 1, 0, -327674, 1, 0, -327673, 1, 0, -327672, 1, 0, -327671, 1, 0, -327670, 1, 0, -327669, 1, 0, -327668, 1, 0, -327667, 1, 0, -327666, 1, 0, -327665, 1, 0, -327664, 1, 0, -327663, 1, 0, -327662, 1, 0, -327661, 1, 0, -327660, 1, 0, -327659, 1, 0, -327658, 1, 0, -327657, 1, 0, -327656, 1, 0, -327655, 1, 0, -327654, 1, 0, -327653, 1, 0, -327652, 1, 0, -327651, 1, 0, -327650, 1, 0, -327649, 1, 0, -327648, 1, 0, -327647, 1, 0, -327646, 1, 0, -327645, 1, 0, -327644, 1, 0, -327643, 1, 0, -327642, 1, 0, -327641, 1, 0, -327640, 1, 0, -262104, 1, 0, -196568, 1, 0, -131032, 1, 0, -65496, 1, 0, 40, 1, 0, 65557, 65536, 0, 65558, 65536, 0, 65559, 65536, 0, 65560, 65536, 0, 65561, 65536, 0, 65562, 65536, 0, 65563, 65536, 0, 65564, 65536, 0, 65565, 65536, 0, 65566, 65536, 0, 65567, 65536, 0, 65568, 65536, 0, 65569, 65536, 0, 65570, 65536, 0, 65571, 65536, 0, 65572, 65536, 0, 65573, 65536, 0, 65574, 65536, 0, 65575, 65536, 0, 65576, 131072, 0, 131112, 131072, 65536, 131111, 65536, 65536, 131110, 65536, 65536, 131109, 65536, 65536, 131108, 65536, 65536, 131107, 65536, 65536, 131106, 65536, 65536, 131105, 65536, 65536, 131104, 65536, 65536, 131103, 65536, 65536, 131102, 65536, 65536, 131101, 65536, 65536, 131100, 65536, 65536, 131099, 65536, 65536, 131098, 65536, 65536, 131097, 65536, 65536, 131096, 65536, 65536, 131095, 65536, 65536, 131094, 65536, 65536, 131093, 65536, 65536)
+color = Color(1, 1, 1, 1)
+spawn_point = Vector2(10, 0)
+
+[node name="Dialog" parent="Dimensions/Dimension" instance=ExtResource("6_nrevt")]
+position = Vector2(85, 0)
+text = "[center]Wait...
+
+What...?
+[/center]"
+
+[node name="Dialog2" parent="Dimensions/Dimension" instance=ExtResource("6_nrevt")]
+position = Vector2(236, -1)
+text = "[center]Where did the [rainbow freq=0.5 sat=0.4 val=0.8]color[/rainbow] go?
+
+Why is it all white?
+[/center]"
+
+[node name="Dialog3" parent="Dimensions/Dimension" instance=ExtResource("6_nrevt")]
+position = Vector2(392, 1)
+text = "[center]Did you do this?
+Do you have [shake rate=20.0 level=5 connected=1]any idea[/shake] what's going on?
+[/center]"
+
+[node name="Flag" parent="Dimensions/Dimension" instance=ExtResource("5_palwt")]
+position = Vector2(625, 8)
+next_level = "res://Scenes/win.tscn"
+
+[node name="Dialog4" parent="Dimensions/Dimension" instance=ExtResource("6_nrevt")]
+position = Vector2(547, 1)
+text = "[center]Oh no...
+[/center]"

@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Brackeys-2024-1"
+config/name="todo: name"
+config/description="Brackey's Game Jam 2024.1 Entry"
 run/main_scene="res://Scenes/Levels/level1.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 boot_splash/bg_color=Color(0.0509804, 0.0509804, 0.0509804, 1)
