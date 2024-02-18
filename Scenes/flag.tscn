@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dbnhx56yb4rn2" path="res://Sprites/light.webp" id="4_qorii"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ovw6j"]
-radius = 14.0357
+radius = 11.0454
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u7syc"]
 atlas = ExtResource("3_1ng2a")

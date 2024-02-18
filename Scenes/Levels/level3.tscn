@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://baxje57t4eylv"]
+
+[ext_resource type="PackedScene" uid="uid://c7bgla3viltv8" path="res://Scenes/transition.tscn" id="1_swu8o"]
+[ext_resource type="PackedScene" uid="uid://0rghwpnt8qio" path="res://Scenes/player.tscn" id="2_nrj04"]
+[ext_resource type="Script" path="res://Scripts/dimensions.gd" id="3_v4mv2"]
+[ext_resource type="PackedScene" uid="uid://dt414hd8xvikb" path="res://Scenes/dimension.tscn" id="4_r2rkt"]
+[ext_resource type="PackedScene" uid="uid://bat7f8dsfbj1l" path="res://Scenes/door.tscn" id="5_12sr0"]
+[ext_resource type="PackedScene" uid="uid://c3csacx10wb8k" path="res://Scenes/flag.tscn" id="5_i6df4"]
+[ext_resource type="PackedScene" uid="uid://cp7o7wm6gvopy" path="res://Scenes/key.tscn" id="7_6xloh"]
+[ext_resource type="PackedScene" uid="uid://dyl3ntck53xy6" path="res://Scenes/dialog.tscn" id="7_mmo3s"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Transition" parent="." instance=ExtResource("1_swu8o")]
+
+[node name="Player" parent="." instance=ExtResource("2_nrj04")]
+
+[node name="Dimensions" type="Node" parent="." node_paths=PackedStringArray("first_dimension")]
+script = ExtResource("3_v4mv2")
+first_dimension = NodePath("Dimension")
+
+[node name="Dimension" parent="Dimensions" instance=ExtResource("4_r2rkt")]
+layer_0/tile_data = PackedInt32Array(131070, 131072, 1, 131071, 131072, 1, 65536, 131072, 1, 65538, 131072, 1, 65537, 131072, 1, 65539, 131072, 1, 65540, 131072, 1, 65541, 131072, 1, 65542, 131072, 1, 65543, 65536, 131073, 65544, 65536, 65536, 65545, 131072, 65536, 9, 131072, 0, 8, 65536, 0, 7, 131072, 196608, -65524, 131072, 131072, -131060, 131072, 196608, -131059, 65536, 0, -65523, 65536, 65536, -131058, 131072, 0, -65522, 131072, 65536, -196591, 131072, 131072, -196590, 65536, 65536, -196589, 65536, 65536, -262125, 65536, 0, -262126, 65536, 0, -262127, 131072, 196608, -262124, 65536, 0, -262123, 65536, 0, -196588, 65536, 65536, -196587, 65536, 65536, -262122, 65536, 0, -196586, 65536, 65536, -262120, 131072, 0, -196584, 131072, 65536, -196585, 65536, 65536, -262121, 65536, 0, 131069, 131072, 1, 131068, 131072, 1, 131067, 131072, 1, 131066, 131072, 1, 131065, 131072, 1, 131064, 131072, 1, 131063, 131072, 1, 131062, 131072, 1, 131061, 131072, 1, 131060, 131072, 1, 131059, 131072, 1, 131058, 131072, 1, 131057, 131072, 1, 131056, 131072, 1, 131055, 131072, 1, 131054, 131072, 1, 131053, 131072, 1, 131052, 131072, 1, 131051, 131072, 1, 131050, 131072, 1, 131049, 131072, 1, 131048, 131072, 1, 131047, 131072, 1, 131046, 131072, 1, 131045, 131072, 1, 131044, 131072, 1, 131043, 131072, 1, 131042, 65536, 65537, 131041, 65536, 65536, 65506, 131072, 0, 65505, 65536, 0, 65504, 131072, 196608, 131040, 131072, 131072)
+
+[node name="Door" parent="Dimensions/Dimension" node_paths=PackedStringArray("target") instance=ExtResource("5_12sr0")]
+position = Vector2(382, -80)
+target = NodePath("../../Dimension2")
+locked = true
+
+[node name="Dialog" parent="Dimensions/Dimension" instance=ExtResource("7_mmo3s")]
+position = Vector2(271, -92)
+text = "[center]This one's locked, if you couldn't tell.
+
+There should be a key in the other direction, somewhere.[/center]"
+
+[node name="Dialog2" parent="Dimensions/Dimension" instance=ExtResource("7_mmo3s")]
+position = Vector2(-415, -5)
+text = "[center]You found it!
+
+Good.[/center]"
+
+[node name="Key" parent="Dimensions/Dimension" node_paths=PackedStringArray("unlocks") instance=ExtResource("7_6xloh")]
+position = Vector2(-488, -12)
+unlocks = NodePath("../Door")
+
+[node name="Dimension2" parent="Dimensions" instance=ExtResource("4_r2rkt")]
+layer_0/tile_data = PackedInt32Array(-262123, 65536, 0, -262122, 65536, 0, -196586, 65536, 65536, -196587, 65536, 65536, -262121, 65536, 0, -196585, 65536, 65536, -262124, 65536, 0, -196588, 65536, 65536, -262125, 65536, 0, -196589, 65536, 65536, -196590, 65536, 65536, -262126, 0, 65537, -327662, 65536, 196608, -393198, 65536, 196608, -458734, 131072, 0, -458735, 65536, 0, -458736, 131072, 196608, -393200, 65536, 131072, -327664, 65536, 131072, -262128, 65536, 131072, -196592, 131072, 131072, -196591, 65536, 65536, -262127, 0, 2, -327663, 0, 2, -393199, 0, 2, -262120, 131072, 0, -196584, 131072, 65536)
+color = Color(0.682353, 0.0509804, 0.215686, 1)
+spawn_point = Vector2(370, -100)
+
+[node name="Dialog" parent="Dimensions/Dimension2" instance=ExtResource("7_mmo3s")]
+position = Vector2(361, -93)
+text = "[center]Locks are fun.
+
+I like them.
+
+A lot.[/center]"
+
+[node name="Flag" parent="Dimensions/Dimension2" instance=ExtResource("5_i6df4")]
+position = Vector2(276, -120)
+next_level = "res://Scenes/Levels/level4.tscn"

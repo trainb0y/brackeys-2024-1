@@ -50,3 +50,4 @@ I think so at least.[/center]"
 
 [node name="Flag" parent="Dimensions/Dimension2" instance=ExtResource("5_qqqp5")]
 position = Vector2(288, -56)
+next_level = "res://Scenes/Levels/level3.tscn"

@@ -29,11 +29,12 @@ func _post_ready():
 
 
 func _physics_process(delta: float):
-	handle_gravity(delta)
-	handle_jump(delta)	
-	handle_movement(delta)
-	
-	move_and_slide()
+	if not dying:
+		handle_gravity(delta)
+		handle_jump(delta)	
+		handle_movement(delta)
+		
+		move_and_slide()
 	
 	if position.y > death_y: die()
 
