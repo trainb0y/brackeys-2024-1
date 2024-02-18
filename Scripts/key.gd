@@ -11,10 +11,9 @@ var target: Player = null
 var offset: Vector2 = Vector2.ZERO
 var t_dir = 1
 
-var spawn_point: Vector2
+@onready var spawn_point: Vector2 = position
 
 func _ready():
-	spawn_point = position
 	modulate = unlocks.target.color
 
 func _physics_process(delta: float):

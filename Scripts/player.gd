@@ -1,7 +1,6 @@
 class_name Player
 extends CharacterBody2D
 
-@export var spawn_point: Node2D
 @export var death_y: float = 1000
  
 const SPEED: float = 250.0
@@ -15,13 +14,19 @@ var current_jump_buffer: float = 0
 var current_coyote: float = 0
 var current_air_time: float = 0
 
+@onready var spawn_point: Vector2 = position
+
 @onready var audio_jump: AudioStreamPlayer2D = $JumpPlayer
 @onready var audio_die: AudioStreamPlayer2D = $DeathPlayer
 
 @onready var t: Transition = Util.get_transition()
 
 func _ready():
-	position = spawn_point.position
+	owner.connect("ready", _post_ready)
+	
+func _post_ready():
+	position = spawn_point # so that the dimension can tell us the spawn
+
 
 func _physics_process(delta: float):
 	handle_gravity(delta)
@@ -79,6 +84,6 @@ func die():
 	audio_die.play()
 	t.into_black()
 	await get_tree().create_timer(0.4).timeout
-	position = spawn_point.position
+	position = spawn_point
 	t.out_of_black()
 	dying = false

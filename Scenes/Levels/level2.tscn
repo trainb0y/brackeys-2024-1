@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://d0xx3twobebjv"]
+
+[ext_resource type="PackedScene" uid="uid://c7bgla3viltv8" path="res://Scenes/transition.tscn" id="1_bj46y"]
+[ext_resource type="PackedScene" uid="uid://0rghwpnt8qio" path="res://Scenes/player.tscn" id="2_x1cdx"]
+[ext_resource type="Script" path="res://Scripts/dimensions.gd" id="3_h5rlw"]
+[ext_resource type="PackedScene" uid="uid://dt414hd8xvikb" path="res://Scenes/dimension.tscn" id="4_vgw1c"]
+[ext_resource type="PackedScene" uid="uid://bat7f8dsfbj1l" path="res://Scenes/door.tscn" id="5_myfe0"]
+[ext_resource type="PackedScene" uid="uid://c3csacx10wb8k" path="res://Scenes/flag.tscn" id="5_qqqp5"]
+[ext_resource type="PackedScene" uid="uid://dyl3ntck53xy6" path="res://Scenes/dialog.tscn" id="6_j0msf"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Transition" parent="." instance=ExtResource("1_bj46y")]
+
+[node name="Player" parent="." instance=ExtResource("2_x1cdx")]
+
+[node name="Dimensions" type="Node" parent="." node_paths=PackedStringArray("first_dimension")]
+script = ExtResource("3_h5rlw")
+first_dimension = NodePath("Dimension")
+
+[node name="Dimension" parent="Dimensions" instance=ExtResource("4_vgw1c")]
+position = Vector2(5, 4)
+layer_0/tile_data = PackedInt32Array(131071, 196608, 65536, 65536, 131072, 1, 65537, 131072, 1, 65538, 131072, 1, 65539, 131072, 1, 65540, 131072, 1, 65541, 131072, 1, 65542, 196608, 196608)
+
+[node name="Door" parent="Dimensions/Dimension" node_paths=PackedStringArray("target") instance=ExtResource("5_myfe0")]
+position = Vector2(104, 0)
+target = NodePath("../../Dimension2")
+
+[node name="Dialog" parent="Dimensions/Dimension" instance=ExtResource("6_j0msf")]
+position = Vector2(38, -2)
+text = "[center]They call this next thing \"a door\"...
+
+(E to interact)[/center]"
+
+[node name="Dimension2" parent="Dimensions" instance=ExtResource("4_vgw1c")]
+position = Vector2(5, 4)
+layer_0/tile_data = PackedInt32Array(65542, 196608, 65536, 65543, 131072, 1, 65544, 131072, 1, 65545, 131072, 1, 65546, 131072, 1, 65548, 131072, 1, 65547, 131072, 1, 65549, 131072, 1, 65550, 131072, 1, 65551, 65536, 131073, 65552, 65536, 65536, 65553, 65536, 65536, 17, 0, 2, -65519, 0, 2, -131055, 0, 2, -196591, 65536, 0, -196592, 131072, 196608, -131056, 65536, 131072, -65520, 65536, 131072, 16, 0, 196609, -196590, 131072, 0, -131054, 65536, 196608, -65518, 65536, 196608, 18, 65536, 196608, 65554, 131072, 65536, 15, 131072, 196608)
+color = Color(0.682353, 0.0509804, 0.215686, 1)
+spawn_point = Vector2(110, 0)
+
+[node name="Door" parent="Dimensions/Dimension2" node_paths=PackedStringArray("target") instance=ExtResource("5_myfe0")]
+position = Vector2(104, 0)
+target = NodePath("../../Dimension")
+
+[node name="Dialog" parent="Dimensions/Dimension2" instance=ExtResource("6_j0msf")]
+position = Vector2(178, 0)
+text = "[center]Cool, right?
+
+I think so at least.[/center]"
+
+[node name="Flag" parent="Dimensions/Dimension2" instance=ExtResource("5_qqqp5")]
+position = Vector2(288, -56)
+
+[node name="Dimension3" parent="Dimensions" instance=ExtResource("4_vgw1c")]
+position = Vector2(5, 4)
+layer_0/tile_data = PackedInt32Array(65542, 196608, 65536, 65543, 131072, 1, 65544, 131072, 1, 65545, 131072, 1, 65546, 131072, 1, 65548, 131072, 1, 65547, 131072, 1, 65549, 131072, 1, 65550, 131072, 1, 65551, 65536, 131073, 65552, 65536, 65536, 65553, 65536, 65536, 17, 0, 2, -65519, 0, 2, -131055, 0, 2, -196591, 65536, 0, -196592, 131072, 196608, -131056, 65536, 131072, -65520, 65536, 131072, 16, 0, 196609, -196590, 131072, 0, -131054, 65536, 196608, -65518, 65536, 196608, 18, 65536, 196608, 65554, 131072, 65536, 15, 131072, 196608)
+color = Color(0.682353, 0.0509804, 0.215686, 1)
+spawn_point = Vector2(110, 0)
+
+[node name="Door" parent="Dimensions/Dimension3" node_paths=PackedStringArray("target") instance=ExtResource("5_myfe0")]
+position = Vector2(104, 0)
+target = NodePath("../../Dimension")
+
+[node name="Dialog" parent="Dimensions/Dimension3" instance=ExtResource("6_j0msf")]
+position = Vector2(178, 0)
+text = "[center]Cool, right?
+
+I think so at least.[/center]"
+
+[node name="Flag" parent="Dimensions/Dimension3" instance=ExtResource("5_qqqp5")]
+position = Vector2(288, -56)

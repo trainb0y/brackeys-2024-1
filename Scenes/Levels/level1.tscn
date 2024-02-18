@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://bgyt6m1fw6rg5"]
+
+[ext_resource type="PackedScene" uid="uid://c7bgla3viltv8" path="res://Scenes/transition.tscn" id="1_5twmx"]
+[ext_resource type="PackedScene" uid="uid://0rghwpnt8qio" path="res://Scenes/player.tscn" id="1_376ux"]
+[ext_resource type="Script" path="res://Scripts/dimensions.gd" id="2_5pa0n"]
+[ext_resource type="PackedScene" uid="uid://dt414hd8xvikb" path="res://Scenes/dimension.tscn" id="3_pqj22"]
+[ext_resource type="PackedScene" uid="uid://dyl3ntck53xy6" path="res://Scenes/dialog.tscn" id="5_ahwq4"]
+[ext_resource type="PackedScene" uid="uid://c3csacx10wb8k" path="res://Scenes/flag.tscn" id="5_fx4sn"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Transition" parent="." instance=ExtResource("1_5twmx")]
+
+[node name="Player" parent="." instance=ExtResource("1_376ux")]
+
+[node name="Dimensions" type="Node" parent="." node_paths=PackedStringArray("first_dimension")]
+script = ExtResource("2_5pa0n")
+first_dimension = NodePath("Dimension")
+
+[node name="Dimension" parent="Dimensions" instance=ExtResource("3_pqj22")]
+layer_0/tile_data = PackedInt32Array(131071, 131072, 1, 65536, 131072, 1, 65537, 131072, 1, 65538, 131072, 1, 65539, 131072, 1, 65540, 65536, 131073, 65541, 65536, 65536, 65542, 65536, 65537, 65543, 131072, 1, 65544, 131072, 1, 65545, 131072, 1, 65546, 131072, 1, 65547, 131072, 1, 65548, 131072, 1, 65549, 131072, 1, 65550, 65536, 131073, 65551, 65536, 65536, 65552, 131072, 65536, 4, 65536, 131072, -65532, 131072, 196608, -65531, 65536, 0, 5, 0, 2, -65530, 131072, 0, 6, 65536, 196608, 16, 65536, 196608, 15, 0, 2, 14, 65536, 131072, -65522, 131072, 196608, -65521, 65536, 0, -65520, 131072, 0, 131070, 131072, 1, 131069, 131072, 1, 131068, 196608, 65536)
+
+[node name="Dialog" parent="Dimensions/Dimension" instance=ExtResource("5_ahwq4")]
+position = Vector2(1, -12)
+text = "[center]
+Hey. You're new here.
+
+(AD+Space to move)
+[/center]
+"
+
+[node name="Dialog2" parent="Dimensions/Dimension" instance=ExtResource("5_ahwq4")]
+position = Vector2(207, -16)
+text = "[center]
+That's your target.
+
+---->
+[/center]
+"
+
+[node name="Flag" parent="Dimensions/Dimension" instance=ExtResource("5_fx4sn")]
+position = Vector2(259, -24)
+next_level = "res://Scenes/Levels/level2.tscn"
