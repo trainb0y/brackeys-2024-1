@@ -96,3 +96,8 @@ func _input(event: InputEvent):
 		await get_tree().create_timer(0.4).timeout
 		get_tree().reload_current_scene()
 
+
+
+func _on_death_detector_body_entered(body):
+	if body is Player: return
+	die()
